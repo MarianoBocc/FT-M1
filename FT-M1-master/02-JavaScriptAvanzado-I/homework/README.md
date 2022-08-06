@@ -13,27 +13,27 @@ var a = 5;
 var b = 10;
 var c = function(a, b, c) {
   var x = 10;
-  console.log(x);
-  console.log(a);
+  console.log(x); // imprime 10
+  console.log(a); // imprime 5
   var f = function(a, b, c) {
     b = a;
-    console.log(b);
+    console.log(b); // imprime '5'
     b = c;
     var x = 5;
   }
   f(a,b,c);
-  console.log(b);
+  console.log(b); // imprime 'c' que es igual a DUDA!!
 }
 c(8,9,10);
-console.log(b);
-console.log(x);
+console.log(b); // imprime 9
+console.log(x); // imprime 1
 ```
 
 ```javascript
-console.log(bar);
-console.log(baz);
+console.log(bar); // undefined
+console.log(baz); // ERROR
 foo();
-function foo() { console.log('Hola!'); }
+function foo() { console.log('Hola!'); } //  'Hola!'
 var bar = 1;
 baz = 2;
 ```
@@ -43,19 +43,19 @@ var instructor = "Tony";
 if(true) {
     var instructor = "Franco";
 }
-console.log(instructor);
+console.log(instructor); // imprime "Tony"
 ```
 
 ```javascript
 var instructor = "Tony";
-console.log(instructor);
+console.log(instructor); //toni
 (function() {
    if(true) {
       var instructor = "Franco";
-      console.log(instructor);
+      console.log(instructor); // "Franco"
    }
 })();
-console.log(instructor);
+console.log(instructor); // imprime "Tony"
 ```
 
 ```javascript
@@ -64,33 +64,33 @@ let pm = "Franco";
 if (true) {
     var instructor = "The Flash";
     let pm = "Reverse Flash";
-    console.log(instructor);
-    console.log(pm);
+    console.log(instructor); // imprime "The Flash"
+    console.log(pm); // imprime "Reverse Flash"
 }
-console.log(instructor);
-console.log(pm);
+console.log(instructor); // imprime "Tony"
+console.log(pm); // "Franco"
 ```
 ### Coerción de Datos
 
 ¿Cuál crees que será el resultado de la ejecución de estas operaciones?:
 
 ```javascript
-6 / "3"
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-7 / 0
-{}[0]
-parseInt("09")
-5 && 2
-2 && 5
-5 || 0
-0 || 5
-[3]+[3]-[10]
-3>2>1
-[] == ![]
+6 / "3" // 2
+"2" * "3" // 6
+4 + 5 + "px" // '9px' hace la suma de los numeros y despues concatena el resultado con el string todo dentro de un string
+"$" + 4 + 5 // '$45' Suma todo como un string
+"4" - 2 // 2
+"4px" - 2 // NaN
+7 / 0 // infinito
+{}[0] // [0]
+parseInt("09") // 9
+5 && 2 // 2
+2 && 5 // 5
+5 || 0 // 5
+0 || 5//5
+[3]+[3]-[10] //23
+3>2>1 // false
+[] == ![] // true COSA RARA!!
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).
@@ -102,8 +102,8 @@ parseInt("09")
 
 ```javascript
 function test() {
-   console.log(a);
-   console.log(foo());
+   console.log(a); // undefined 
+   console.log(foo()); // 2
 
    var a = 1;
    function foo() {
@@ -127,7 +127,7 @@ function getFood(food) {
     return snack;
 }
 
-getFood(false);
+getFood(false); //undefined
 ```
 
 
@@ -147,11 +147,11 @@ var obj = {
    }
 };
 
-console.log(obj.prop.getFullname());
+console.log(obj.prop.getFullname()); // Aurelio de la Rosa
 
 var test = obj.prop.getFullname;
 
-console.log(test());
+console.log(test()); //Juan Perez
 ```
 
 ### Event loop
