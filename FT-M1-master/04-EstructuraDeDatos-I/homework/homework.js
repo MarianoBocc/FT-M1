@@ -15,9 +15,22 @@ Como ejercicio adicional y completamente opcional, al terminar de resolver este 
 */
 
 function nFactorial(n) {
+  if(n <0) { 
+    return 'No se puede factorizar';
+  }else{
+    if (n > -1 && n < 2) {
+      return 1;
+    }
+  }
+  return n * nFactorial (n-1);
 }
 
 function nFibonacci(n) {
+  if(n < 2){
+    return n;
+  } else{
+   return nFibonacci(n -1) + nFibonacci(n -2);    
+  }
 }
 
 /*
@@ -30,8 +43,35 @@ Pueden utilizar class o función constructora.
 */
 
 function Queue() {
+   this.queue =[];
 
+ this.dequeue= function(){
+  return this.queue.pop();
+ };
+ this.enqueue =   function(elem){
+  return this.queue.unshift(elem);
+  };
+ this.size = function(){
+    return this.queue.length;
+  };
+};
+
+/*class Queue {
+  constructor (){
+    this._data = [];
+  }
+  enqueue (elem){
+
+    this._data.unshift(elem);
+  }
+  dequeue (){
+    return this._data.pop();
+  }
+  size () {
+    return  this._data.length;
+  }
 }
+*/
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
