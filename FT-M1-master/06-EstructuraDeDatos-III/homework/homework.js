@@ -16,13 +16,13 @@ class BinarySearchTree {
     this.value = value;
     this.left = null;
     this.right = null;
-    this.size =1;
+    this._size =1;
   };
   size(){ 
-    return this.size; //esta func retorna el tamaño del árbol
+    return this._size; //esta func retorna el tamaño del árbol
   }
   insert(nuevoValor){
-    this.size++;  //incrementa el tamaño del arbol
+    this._size++;  //incrementa el tamaño del arbol
     if (nuevoValor < this.value) { //si el valor q inserto es menor q la raiz lo coloca a la izquierda
       if (!this.left) {
         this.left = new BinarySearchTree(nuevoValor); // si no colocar el nuevo valor a la izquierda
@@ -47,7 +47,7 @@ class BinarySearchTree {
         return true;
       }
     }else{
-      if (this.right?.contains(anyValues)) {
+      if (this.right?.contains(anyValue)) {
         return true;
       };
     }
